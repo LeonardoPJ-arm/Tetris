@@ -44,6 +44,10 @@ void loop() {       // manipular a matrix e botões, não usar delay e deixar mo
       case estado_efeito:
         efeitoBrowniano();
         break;
+
+      case estado_snake:
+        main_snake();
+        break;
     }
   }
 
@@ -61,7 +65,6 @@ void efeitoBrowniano(){
     iniciado  = false;
   }
   
-  //Serial.println("relogio_20ms");
   if(button_press[back]==true){
     button_press[back]=false;
     limpa_matrix();
@@ -70,17 +73,25 @@ void efeitoBrowniano(){
     return;
   }
 
-  //if (relogio_20ms != relogio_20ms_anterior) {         // 20ms / 50 Hz
-  //  relogio_20ms_anterior = relogio_20ms;  
-    
   byte col = random(0, 18);  // coluna (0 a 17)
   byte lin = random(0, 10);  // linha  (0 a 9)
   matrix[col][lin] = 1;
   col = random(0, 18);  // coluna (0 a 17)
   lin = random(0, 10);  // linha  (0 a 9)
   matrix[col][lin] = 0;     
-  //}
-     
+  
+  if(button_hold[up]==true){
+    col = random(0, 18);  // coluna (0 a 17)
+    lin = random(0, 10);  // linha  (0 a 9)
+    matrix[col][lin] = 1;
+  }
+
+  if(button_hold[down]==true){
+    col = random(0, 18);  // coluna (0 a 17)
+    lin = random(0, 10);  // linha  (0 a 9)
+    matrix[col][lin] = 0;
+  }
+
   
 }
 

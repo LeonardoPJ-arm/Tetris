@@ -108,6 +108,8 @@ void main_tetris(){
         indice_peca = random(0, 7);
         peca_escolhida = pecas[indice_peca];
 
+        button_hold[down]=false;
+
       }else{
         posy++;
       }
@@ -141,6 +143,9 @@ void main_tetris(){
     // Desce peça
       if(button_press[down]==true){
         button_press[down]=false;
+        descer_peca = true;
+      }
+      if(button_hold[down]==true){
         descer_peca = true;
       }
 

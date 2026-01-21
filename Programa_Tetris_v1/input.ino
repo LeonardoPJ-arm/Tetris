@@ -17,8 +17,8 @@ Button_hold
 
 #define BUTTON_MASK 0b00111111    // PC0..PC5 -> A0..A5
 
-#define HOLD_TICKS 50   // 50 x 20ms = 1 segundo
-#define DEBOUNCE_TICKS 5
+#define HOLD_TICKS 25       // 25 x 20ms = 500ms
+#define DEBOUNCE_TICKS 4    // 4 x 20ms = 80ms
 byte debounce_cnt[6];
 byte leitura;
 byte stable_state = 0;  

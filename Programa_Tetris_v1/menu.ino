@@ -30,7 +30,6 @@ byte sprite_S[5][5] = {
   {1,1,1,1,0}
 };
 
-
 byte seta[3][4] = {
   {0,0,1,0},
   {1,1,1,1},
@@ -62,7 +61,7 @@ void main_menu(){
       }else if(posicao_cursor == 1){
         estado_atual = estado_efeito;
       }else if(posicao_cursor == 2){
-        //
+        estado_atual = estado_snake;
       }
     }
 
